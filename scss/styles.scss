@@ -1,0 +1,81 @@
+@import "reset.scss";
+@import "yin_yang.scss";
+
+$cell-width: 200px;
+$cell-height: $cell-width;
+$grid-width: $cell-width * 2;
+
+html {
+  background: #c0422c;
+}
+
+body {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: radial-gradient(circle closest-side, #fb933a, #c0422c);
+  height: 100vh;
+  font-family: "Varela Round", helvetica, arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+#diamond-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  height: 100vh;
+}
+
+#big-diamond {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  transform: rotate(45deg);
+  width: $grid-width;
+}
+
+.diamond {
+  background-image: linear-gradient(-45deg, #fb933a, #f76432);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $cell-width;
+  height: $cell-height;
+  box-shadow: 6px 6px 6px 1px #833124;
+  transition: all 0.4s ease-in-out;
+  border: 0;
+
+  & .diamond-content {
+    transform: rotate(-45deg);
+  }
+
+  &:hover {
+    box-shadow: -6px -6px 6px 1px #833124;
+  }
+}
+
+.site-link,
+.footer-copyright {
+  position: absolute;
+  pointer-events: none;
+  transform: rotate(-90deg);
+  color: #833124;
+  // text-shadow: 0px 1px 1px #4d4d4d;
+}
+.site-link {
+  top: 145px;
+  left: -60px;
+  font-size: 1.25rem;
+}
+
+.footer-copyright {
+  bottom: 125px;
+  left: 290px;
+  white-space: nowrap;
+  overflow: visible;
+}
+
+a {
+  text-decoration: none;
+}
