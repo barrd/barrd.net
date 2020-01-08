@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: center;
   width: 100vw;
-  height: 100vh;
+  height: 97vh;
   pointer-events: none;
 }
 
@@ -65,7 +65,6 @@
   #yin-yang {
     pointer-events: auto;
     display: block;
-    margin: -290px auto;
     transition: box-shadow 1.2s, opacity 1.2s;
     &:hover {
       box-shadow: -6px -6px 6px 1px #833124;
