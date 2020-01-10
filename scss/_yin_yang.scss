@@ -14,12 +14,12 @@
 #yin-yang {
   position: relative;
   pointer-events: none;
-  background: #fb933a;
+  background: $color-light-orange;
   opacity: 0.4;
   width: 160px;
   height: 80px;
   box-sizing: content-box;
-  border-color: #f76432;
+  border-color: $color-mid-orange;
   border-style: solid;
   border-width: 0 0 80px 0;
   border-radius: 50%;
@@ -35,8 +35,8 @@
     height: 20px;
     border-radius: 50%;
     left: 0;
-    background: #fb933a;
-    border: 30px solid #f76432;
+    background: $color-light-orange;
+    border: 30px solid $color-mid-orange;
   }
   &:after {
     position: absolute;
@@ -47,8 +47,8 @@
     border-radius: 50%;
     z-index: -99;
     left: 80px;
-    background: #f76432;
-    border: 30px solid #fb933a;
+    background: $color-mid-orange;
+    border: 30px solid $color-light-orange;
   }
   a {
     position: absolute;
@@ -67,7 +67,7 @@
     display: block;
     transition: box-shadow 1.2s, opacity 1.2s;
     &:hover {
-      box-shadow: -6px -6px 6px 1px #833124;
+      box-shadow: -6px -6px 6px 1px $color-dark-text;
       opacity: 1;
     }
   }

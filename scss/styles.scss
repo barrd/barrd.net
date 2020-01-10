@@ -1,18 +1,17 @@
 @import "reset.scss";
+@import "variables.scss";
 @import "yin_yang.scss";
 
-$cell-width: 200px;
-$cell-height: $cell-width;
-$grid-width: $cell-width * 2;
-
-$bg-width: $cell-width * 0.5;
-
 html {
-  background: #c0422c;
+  background: $color-dark-orange;
 }
 
 body {
-  background-image: radial-gradient(circle closest-side, #fb933a, #c0422c);
+  background-image: radial-gradient(
+    circle closest-side,
+    $color-light-orange,
+    $color-dark-orange
+  );
   background-repeat: no-repeat;
   background-attachment: fixed;
   height: 100vh;
@@ -38,24 +37,59 @@ body {
 }
 
 .diamond {
-  background-image: linear-gradient(-45deg, #fb933a, #f76432);
+  background-image: linear-gradient(
+    -45deg,
+    $color-light-orange,
+    $color-mid-orange
+  );
   display: flex;
   align-items: center;
   justify-content: center;
   width: $cell-width;
   height: $cell-height;
-  box-shadow: 6px 6px 6px 1px #833124;
+  box-shadow: 6px 6px 6px 1px $color-dark-text;
   transition: all 0.4s ease-in-out;
   border: 0;
 
   & .diamond-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transform: rotate(-45deg);
     width: $cell-width;
     height: $cell-height;
+
+    span {
+      font-size: 1.25rem;
+      text-align: center;
+      color: $color-dark-text;
+      transition: 0.75s ease-in-out;
+      opacity: 0;
+    }
+
+    &:hover span {
+      opacity: 1;
+    }
   }
 
   &:hover {
-    box-shadow: -6px -6px 6px 1px #833124;
+    box-shadow: -6px -6px 6px 1px $color-dark-text;
+  }
+
+  %diamond-top {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: $bg-width $bg-width;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    content: "";
+    opacity: 0.65;
+    transition: 0.4s ease-in-out;
+    pointer-events: auto !important;
   }
 
   /**
@@ -65,71 +99,23 @@ body {
    */
 
   & .diamond-top:after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: -1;
-    content: "";
-    opacity: 0.65;
-    transition: 0.4s ease-in-out;
-    pointer-events: auto !important;
+    @extend %diamond-top;
     background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20512%20512%22%3E%3Cpath%20d%3D%22M189.37%2C152.86Zm-58.74-29.37C130.79%2C123.5%2C130.71%2C123.5%2C130.63%2C123.49Zm351.42%2C45.35c-10.61-25.5-32.08-53-48.94-61.73%2C13.72%2C26.89%2C21.67%2C53.88%2C24.7%2C74%2C0%2C0%2C0%2C.14.05.41-27.58-68.75-74.35-96.47-112.55-156.83-1.93-3.05-3.86-6.11-5.74-9.33-1-1.65-1.86-3.34-2.69-5.05A44.88%2C44.88%2C0%2C0%2C1%2C333.24.69a.63.63%2C0%2C0%2C0-.55-.66.9.9%2C0%2C0%2C0-.46%2C0l-.12.07-.18.1.1-.14c-54.23%2C31.77-76.72%2C87.38-82.5%2C122.78a130%2C130%2C0%2C0%2C0-48.33%2C12.33%2C6.25%2C6.25%2C0%2C0%2C0-3.09%2C7.75%2C6.13%2C6.13%2C0%2C0%2C0%2C7.79%2C3.79l.52-.21a117.84%2C117.84%2C0%2C0%2C1%2C42.11-11l1.42-.1c2-.12%2C4-.2%2C6-.22A122.61%2C122.61%2C0%2C0%2C1%2C291%2C140c.67.2%2C1.32.42%2C2%2C.63%2C1.89.57%2C3.76%2C1.2%2C5.62%2C1.87%2C1.36.5%2C2.71%2C1%2C4.05%2C1.58%2C1.09.44%2C2.18.88%2C3.25%2C1.35q2.52%2C1.13%2C5%2C2.35c.75.37%2C1.5.74%2C2.25%2C1.13q2.4%2C1.26%2C4.74%2C2.63%2C1.51.87%2C3%2C1.8a124.89%2C124.89%2C0%2C0%2C1%2C42.66%2C44.13c-13-9.15-36.35-18.19-58.82-14.28%2C87.74%2C43.86%2C64.18%2C194.9-57.39%2C189.2a108.43%2C108.43%2C0%2C0%2C1-31.74-6.12c-2.42-.91-4.8-1.89-7.16-2.93-1.38-.63-2.76-1.27-4.12-2C174.5%2C346%2C149.9%2C316.92%2C146.83%2C281.59c0%2C0%2C11.25-41.95%2C80.62-41.95%2C7.5%2C0%2C28.93-20.92%2C29.33-27-.09-2-42.54-18.87-59.09-35.18-8.85-8.71-13.05-12.91-16.77-16.06a69.58%2C69.58%2C0%2C0%2C0-6.31-4.77A113.05%2C113.05%2C0%2C0%2C1%2C173.92%2C97c-25.06%2C11.41-44.55%2C29.45-58.71%2C45.37h-.12c-9.67-12.25-9-52.65-8.43-61.08-.12-.53-7.22%2C3.68-8.15%2C4.31a178.54%2C178.54%2C0%2C0%2C0-23.84%2C20.43A214%2C214%2C0%2C0%2C0%2C51.9%2C133.36l0%2C0a.08.08%2C0%2C0%2C1%2C0%2C0%2C205.84%2C205.84%2C0%2C0%2C0-32.73%2C73.9c-.06.27-2.33%2C10.21-4%2C22.48q-.42%2C2.87-.78%2C5.74c-.57%2C3.69-1%2C7.71-1.44%2C14%2C0%2C.24%2C0%2C.48-.05.72-.18%2C2.71-.34%2C5.41-.49%2C8.12%2C0%2C.41%2C0%2C.82%2C0%2C1.24%2C0%2C134.7%2C109.21%2C243.89%2C243.92%2C243.89%2C120.64%2C0%2C220.82-87.58%2C240.43-202.62.41-3.12.74-6.26%2C1.11-9.41%2C4.85-41.83-.54-85.79-15.82-122.55Z%22%20fill%3D%22%23f76432%22%2F%3E%3C%2Fsvg%3E");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: $bg-width $bg-width;
   }
 
   & .diamond-right:after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: -1;
-    content: "";
-    opacity: 0.65;
-    transition: 0.4s ease-in-out;
-    pointer-events: auto !important;
+    @extend %diamond-top;
     background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20448%20512%22%3E%3Cpath%20d%3D%22M100.28%20448H7.4V148.9h92.88zM53.79%20108.1C24.09%20108.1%200%2083.5%200%2053.8a53.79%2053.79%200%200%201%20107.58%200c0%2029.7-24.1%2054.3-53.79%2054.3zM447.9%20448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29%200-55.69%2037.7-55.69%2076.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5%2042.69-48.3%2087.88-48.3%2094%200%20111.28%2061.9%20111.28%20142.3V448z%22%20fill%3D%22%23f76432%22%2F%3E%3C%2Fsvg%3E");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: $bg-width $bg-width;
   }
 
   & .diamond-left:after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: -1;
-    content: "";
-    opacity: 0.65;
-    transition: 0.4s ease-in-out;
-    pointer-events: auto !important;
+    @extend %diamond-top;
     background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20512%20512%22%3E%3Cpath%20d%3D%22M459.37%20151.716c.325%204.548.325%209.097.325%2013.645%200%20138.72-105.583%20298.558-298.558%20298.558-59.452%200-114.68-17.219-161.137-47.106%208.447.974%2016.568%201.299%2025.34%201.299%2049.055%200%2094.213-16.568%20130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772%206.498.974%2012.995%201.624%2019.818%201.624%209.421%200%2018.843-1.3%2027.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969%207.797%2030.214%2012.67%2047.431%2013.319-28.264-18.843-46.781-51.005-46.781-87.391%200-19.492%205.197-37.36%2014.294-52.954%2051.655%2063.675%20129.3%20105.258%20216.365%20109.807-1.624-7.797-2.599-15.918-2.599-24.04%200-57.828%2046.782-104.934%20104.934-104.934%2030.213%200%2057.502%2012.67%2076.67%2033.137%2023.715-4.548%2046.456-13.32%2066.599-25.34-7.798%2024.366-24.366%2044.833-46.132%2057.827%2021.117-2.273%2041.584-8.122%2060.426-16.243-14.292%2020.791-32.161%2039.308-52.628%2054.253z%22%20fill%3D%22%23f76432%22%2F%3E%3C%2Fsvg%3E");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: $bg-width $bg-width;
   }
 
   & .diamond-bottom:after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: -1;
-    content: "";
-    opacity: 0.65;
-    transition: 0.4s ease-in-out;
-    pointer-events: auto !important;
+    @extend %diamond-top;
     background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20512%20512%22%3E%3Cpath%20d%3D%22M61.7%20169.4l101.5%20278C92.2%20413%2043.3%20340.2%2043.3%20256c0-30.9%206.6-60.1%2018.4-86.6zm337.9%2075.9c0-26.3-9.4-44.5-17.5-58.7-10.8-17.5-20.9-32.4-20.9-49.9%200-19.6%2014.8-37.8%2035.7-37.8.9%200%201.8.1%202.8.2-37.9-34.7-88.3-55.9-143.7-55.9-74.3%200-139.7%2038.1-177.8%2095.9%205%20.2%209.7.3%2013.7.3%2022.2%200%2056.7-2.7%2056.7-2.7%2011.5-.7%2012.8%2016.2%201.4%2017.5%200%200-11.5%201.3-24.3%202l77.5%20230.4L249.8%20247l-33.1-90.8c-11.5-.7-22.3-2-22.3-2-11.5-.7-10.1-18.2%201.3-17.5%200%200%2035.1%202.7%2056%202.7%2022.2%200%2056.7-2.7%2056.7-2.7%2011.5-.7%2012.8%2016.2%201.4%2017.5%200%200-11.5%201.3-24.3%202l76.9%20228.7%2021.2-70.9c9-29.4%2016-50.5%2016-68.7zm-139.9%2029.3l-63.8%20185.5c19.1%205.6%2039.2%208.7%2060.1%208.7%2024.8%200%2048.5-4.3%2070.6-12.1-.6-.9-1.1-1.9-1.5-2.9l-65.4-179.2zm183-120.7c.9%206.8%201.4%2014%201.4%2021.9%200%2021.6-4%2045.8-16.2%2076.2l-65%20187.9C426.2%20403%20468.7%20334.5%20468.7%20256c0-37-9.4-71.8-26-102.1zM504%20256c0%20136.8-111.3%20248-248%20248C119.2%20504%208%20392.7%208%20256%208%20119.2%20119.2%208%20256%208c136.7%200%20248%20111.2%20248%20248zm-11.4%200c0-130.5-106.2-236.6-236.6-236.6C125.5%2019.4%2019.4%20125.5%2019.4%20256S125.6%20492.6%20256%20492.6c130.5%200%20236.6-106.1%20236.6-236.6z%22%20fill%3D%22%23f76432%22%2F%3E%3C%2Fsvg%3E");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: $bg-width $bg-width;
   }
 }
 
@@ -137,24 +123,25 @@ body {
 .diamond-right:hover:after,
 .diamond-left:hover:after,
 .diamond-bottom:hover:after {
-  opacity: 1;
+  opacity: 0.25;
 }
 
-.site-link,
-.footer-copyright {
+%external-box {
   position: absolute;
   pointer-events: none;
   transform: rotate(-90deg);
-  color: #833124;
-  // text-shadow: 0px 1px 1px #4d4d4d;
+  color: $color-dark-text;
 }
+
 .site-link {
+  @extend %external-box;
   top: 145px;
   left: -60px;
   font-size: 1.25rem;
 }
 
 .footer-copyright {
+  @extend %external-box;
   bottom: 125px;
   left: 290px;
   white-space: nowrap;
