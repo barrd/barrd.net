@@ -5,19 +5,32 @@
 #yin-yang-cont {
   z-index: 9;
   position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
-  height: 97vh;
   pointer-events: none;
+  @media (min-width: $breakpoint-width-large) and (min-height: $breakpoint-height-large) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 97vh;
+  }
+  @media (max-height: $breakpoint-height-large) {
+    position: relative;
+    width: 160px;
+    margin: -280px auto 0 auto;
+  }
+  @media (max-width: $breakpoint-width-small) {
+    position: relative;
+    top: -603px;
+    width: 160px;
+    margin: 0 auto;
+  }
 }
 
 #yin-yang {
   position: relative;
-  pointer-events: none;
+  pointer-events: auto;
   background: $color-light-orange;
   opacity: 0.4;
   width: 160px;
@@ -31,6 +44,19 @@
   animation-duration: 30000ms;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+  transition: box-shadow 1.2s, opacity 1.2s;
+
+  @media (max-width: $breakpoint-width-small) {
+    opacity: 0.75;
+  }
+
+  &:hover {
+    box-shadow: -6px -6px 6px 1px $color-dark-text;
+    opacity: 1;
+  }
+  &:hover a div {
+    opacity: 1;
+  }
 
   &:before {
     position: absolute;
@@ -72,21 +98,6 @@
       font-size: 1.25rem;
       opacity: 0;
       transition: 0.75s ease-in-out;
-    }
-  }
-}
-
-@media only screen and (min-width: 1024px) {
-  #yin-yang {
-    pointer-events: auto;
-    display: block;
-    transition: box-shadow 1.2s, opacity 1.2s;
-    &:hover {
-      box-shadow: -6px -6px 6px 1px $color-dark-text;
-      opacity: 1;
-    }
-    &:hover a div {
-      opacity: 1;
     }
   }
 }

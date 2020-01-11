@@ -11,14 +11,16 @@ html {
 }
 
 body {
-  background-image: radial-gradient(
-    circle closest-side,
-    $color-light-orange,
-    $color-dark-orange
-  );
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  height: 100vh;
+  @media (min-width: $breakpoint-width-large) and (min-height: $breakpoint-height-large) {
+    height: 100vh;
+    background-image: radial-gradient(
+      circle closest-side,
+      $color-light-orange,
+      $color-dark-orange
+    );
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
   font-family: "Varela Round", helvetica, arial, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
@@ -29,15 +31,25 @@ body {
   justify-content: center;
   position: relative;
   z-index: 2;
-  height: 97vh;
+  @media (min-width: $breakpoint-width-large) and (min-height: $breakpoint-height-large) {
+    height: 97vh;
+  }
 }
 
 #big-diamond {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  transform: rotate(45deg);
   width: $grid-width;
+  @media (min-width: $breakpoint-width-large) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    transform: rotate(45deg);
+  }
+  @media (max-height: $breakpoint-height-small) and (min-width: $breakpoint-width-small) {
+    margin-top: 130px;
+  }
+  @media (max-width: $breakpoint-width-small) {
+    width: $cell-width;
+  }
 }
 
 .diamond {
@@ -54,6 +66,11 @@ body {
   box-shadow: 6px 6px 6px 1px $color-dark-text;
   transition: all 0.4s ease-in-out;
   border: 0;
+  @media (max-width: $breakpoint-width-small) {
+    margin-top: 82px;
+    transform: rotate(45deg);
+    box-shadow: none;
+  }
 
   & .diamond-content {
     display: flex;
@@ -69,6 +86,10 @@ body {
       color: $color-dark-text;
       transition: 0.75s ease-in-out;
       opacity: 0;
+      // @media (max-width: $breakpoint-width-small) {
+      //   opacity: 0.75;
+      //   font-size: 1rem;
+      // }
     }
 
     &:hover span {
@@ -78,6 +99,9 @@ body {
 
   &:hover {
     box-shadow: -6px -6px 6px 1px $color-dark-text;
+    @media (max-width: $breakpoint-width-small) {
+      box-shadow: none;
+    }
   }
 
   %diamond-top {
@@ -94,6 +118,10 @@ body {
     opacity: 0.65;
     transition: 0.4s ease-in-out;
     pointer-events: auto !important;
+    @media (max-width: $breakpoint-width-small) {
+      background-size: $bg-width-small $bg-width-small;
+      opacity: 0.8;
+    }
   }
 
   // Instructions -> https://stackoverflow.com/questions/9185434/using-svg-as-background-image
@@ -126,6 +154,9 @@ body {
 .diamond-left:hover:after,
 .diamond-bottom:hover:after {
   opacity: 0.25;
+  @media (max-width: $breakpoint-width-small) {
+    opacity: 1;
+  }
 }
 
 %external-box {
@@ -147,6 +178,10 @@ body {
   bottom: 86px;
   left: 327px;
   white-space: nowrap;
+  @media (max-width: $breakpoint-width-small) {
+    bottom: 86px;
+    left: 122px;
+  }
 }
 
 a {
