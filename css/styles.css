@@ -32,99 +32,6 @@ section {
 body {
   line-height: 1; }
 
-#yin-yang-cont {
-  z-index: 9;
-  position: absolute;
-  pointer-events: none; }
-  @media (min-width: 690px) and (min-height: 670px) {
-    #yin-yang-cont {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 97vh; } }
-  @media (max-height: 670px) {
-    #yin-yang-cont {
-      position: relative;
-      width: 160px;
-      margin: -280px auto 0 auto; } }
-  @media (max-width: 689px) {
-    #yin-yang-cont {
-      position: relative;
-      top: -603px;
-      width: 160px;
-      margin: 0 auto; } }
-
-#yin-yang {
-  position: relative;
-  pointer-events: auto;
-  background: #fb933a;
-  opacity: 0.4;
-  width: 160px;
-  height: 80px;
-  box-sizing: content-box;
-  border-color: #f76432;
-  border-style: solid;
-  border-width: 0 0 80px 0;
-  border-radius: 50%;
-  animation-name: spin;
-  animation-duration: 30000ms;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  transition: box-shadow 1.2s, opacity 1.2s; }
-  @media (max-width: 689px) {
-    #yin-yang {
-      opacity: 0.75; } }
-  #yin-yang:hover {
-    box-shadow: -6px -6px 6px 1px #833124;
-    opacity: 1; }
-  #yin-yang:hover a div {
-    opacity: 1; }
-  #yin-yang:before {
-    position: absolute;
-    content: "";
-    top: 50%;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    left: 0;
-    background: #fb933a;
-    border: 30px solid #f76432; }
-  #yin-yang:after {
-    position: absolute;
-    content: "";
-    top: 50%;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    z-index: -99;
-    left: 80px;
-    background: #f76432;
-    border: 30px solid #fb933a; }
-  #yin-yang a {
-    background-color: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #833124;
-    width: 160px;
-    height: 160px; }
-    #yin-yang a div {
-      position: relative;
-      z-index: 99;
-      text-align: center;
-      font-size: 1.25rem;
-      opacity: 0;
-      transition: 0.75s ease-in-out; }
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg); }
-  to {
-    transform: rotate(360deg); } }
-
 html {
   background: #c0422c; }
 
@@ -137,6 +44,9 @@ body {
       background-image: radial-gradient(circle closest-side, #fb933a, #c0422c);
       background-repeat: no-repeat;
       background-attachment: fixed; } }
+
+a {
+  text-decoration: none; }
 
 #diamond-list {
   display: flex;
@@ -257,7 +167,97 @@ body {
       bottom: 86px;
       left: 122px; } }
 
-a {
-  text-decoration: none; }
+#yin-yang-cont {
+  z-index: 9;
+  position: absolute;
+  pointer-events: none; }
+  @media (min-width: 690px) and (min-height: 670px) {
+    #yin-yang-cont {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 97vh; } }
+  @media (max-height: 670px) {
+    #yin-yang-cont {
+      position: relative;
+      width: 160px;
+      margin: -280px auto 0 auto; } }
+  @media (max-width: 689px) {
+    #yin-yang-cont {
+      position: relative;
+      top: -603px;
+      width: 160px;
+      margin: 0 auto; } }
+
+#yin-yang {
+  position: relative;
+  pointer-events: auto;
+  background: #fb933a;
+  opacity: 0.4;
+  width: 160px;
+  height: 80px;
+  box-sizing: content-box;
+  border-color: #f76432;
+  border-style: solid;
+  border-width: 0 0 80px 0;
+  border-radius: 50%;
+  animation-name: spin;
+  animation-duration: 30000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transition: box-shadow 1.2s, opacity 1.2s; }
+  @media (max-width: 689px) {
+    #yin-yang {
+      opacity: 0.75; } }
+  #yin-yang:hover {
+    box-shadow: -6px -6px 6px 1px #833124;
+    opacity: 1; }
+  #yin-yang:hover a div {
+    opacity: 1; }
+  #yin-yang:before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    left: 0;
+    background: #fb933a;
+    border: 30px solid #f76432; }
+  #yin-yang:after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    z-index: -99;
+    left: 80px;
+    background: #f76432;
+    border: 30px solid #fb933a; }
+  #yin-yang a {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #833124;
+    width: 160px;
+    height: 160px; }
+    #yin-yang a div {
+      position: relative;
+      z-index: 99;
+      text-align: center;
+      font-size: 1.25rem;
+      opacity: 0;
+      transition: 0.75s ease-in-out; }
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
 
 /*# sourceMappingURL=styles.css.map */
