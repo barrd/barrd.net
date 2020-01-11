@@ -199,13 +199,20 @@ table {
     background: #f76432;
     border: 30px solid #fb933a; }
   #yin-yang a {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0.9999;
     background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #833124;
     width: 160px;
     height: 160px; }
+    #yin-yang a div {
+      position: relative;
+      z-index: 99;
+      text-align: center;
+      font-size: 1.25rem;
+      opacity: 0;
+      transition: 0.75s ease-in-out; }
 
 @media only screen and (min-width: 1024px) {
   #yin-yang {
@@ -214,6 +221,8 @@ table {
     transition: box-shadow 1.2s, opacity 1.2s; }
     #yin-yang:hover {
       box-shadow: -6px -6px 6px 1px #833124;
+      opacity: 1; }
+    #yin-yang:hover a div {
       opacity: 1; } }
 
 @keyframes spin {
@@ -321,8 +330,8 @@ body {
   font-size: 1.25rem; }
 
 .footer-copyright {
-  bottom: 125px;
-  left: 290px;
+  bottom: 86px;
+  left: 327px;
   white-space: nowrap; }
 
 a {

@@ -33,6 +33,7 @@
   animation-duration: 30000ms;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+
   &:before {
     position: absolute;
     content: "";
@@ -56,14 +57,24 @@
     background: $color-mid-orange;
     border: 30px solid $color-light-orange;
   }
+
   a {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0.9999;
     background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-dark-text;
     width: 160px;
     height: 160px;
+
+    & div {
+      position: relative;
+      z-index: 99;
+      text-align: center;
+      font-size: 1.25rem;
+      opacity: 0;
+      transition: 0.75s ease-in-out;
+    }
   }
 }
 
@@ -74,6 +85,9 @@
     transition: box-shadow 1.2s, opacity 1.2s;
     &:hover {
       box-shadow: -6px -6px 6px 1px $color-dark-text;
+      opacity: 1;
+    }
+    &:hover a div {
       opacity: 1;
     }
   }
