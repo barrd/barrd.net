@@ -11,4 +11,4 @@ npm init
 ## About The Author
 
 - Dave Barr
-- dave at duo48.com
+- barrd.net at gmail.com
