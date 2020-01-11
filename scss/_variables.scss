@@ -1,20 +1,14 @@
-/**
- * ====================================================================
- * Variables SCSS for barrd.net
- * ====================================================================
- */
+// ====================================================================
+// Variables SCSS for barrd.net
+// ====================================================================
 
-/**
- * Colours
- */
-$color-dark-text: #833124; /* body text & drop shadow */
-$color-dark-orange: #c0422c; /* background */
+// Colours
+$color-dark-text: #833124; // body text & drop shadow
+$color-dark-orange: #c0422c; // background
 $color-mid-orange: #f76432;
 $color-light-orange: #fb933a;
 
-/**
- * Diamonds
- */
+// Diamonds
 $cell-width: 200px;
 $cell-height: $cell-width;
 $grid-width: $cell-width * 2;

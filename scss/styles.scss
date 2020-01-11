@@ -1,8 +1,6 @@
-/**
- * ====================================================================
- * Styles SCSS for barrd.net
- * ====================================================================
- */
+// ====================================================================
+// Styles SCSS for barrd.net
+// ====================================================================
 
 @import "reset.scss";
 @import "variables.scss";
@@ -98,11 +96,9 @@ body {
     pointer-events: auto !important;
   }
 
-  /**
-   * Instructions -> https://stackoverflow.com/questions/9185434/using-svg-as-background-image
-   * SVGOMG Tool  -> https://jakearchibald.github.io/svgomg/
-   * URL Encoder  -> http://www.asiteaboutnothing.net/c_decode-url.html
-   */
+  // Instructions -> https://stackoverflow.com/questions/9185434/using-svg-as-background-image
+  // SVGOMG Tool  -> https://jakearchibald.github.io/svgomg/
+  // URL Encoder  -> http://www.asiteaboutnothing.net/c_decode-url.html
 
   & .diamond-top:after {
     @extend %diamond-top;
