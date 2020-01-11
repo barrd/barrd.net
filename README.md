@@ -6,6 +6,7 @@ You are welcome to view, clone or download this source code.
 
 ```
 npm init
+npm install
 ```
 
 ## Gulp Commands
