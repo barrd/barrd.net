@@ -4,7 +4,7 @@ You are welcome to view, clone or download this source code.
 
 ## Install Instructions
 
-```console
+```sh
 npm init
 npm install
 ```
@@ -13,13 +13,13 @@ npm install
 
 To compile SCSS and reload browser
 
-```console
+```sh
 gulp watch
 ```
 
 To compile CSS for distribution inc. autoprefixing
 
-```console
+```sh
 gulp css
 ```
 
