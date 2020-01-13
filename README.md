@@ -11,7 +11,7 @@ npm install
 
 ## Gulp Commands
 
-To compile SCSS and reload browser
+To compile SCSS and reload browser with Browsersync
 
 ```sh
 gulp watch
