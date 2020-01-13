@@ -147,7 +147,7 @@ a {
     .diamond-bottom:hover:after {
       opacity: 1; } }
 
-.site-link, .footer-copyright {
+.site-link, footer {
   position: absolute;
   pointer-events: none;
   transform: rotate(-90deg);
@@ -158,12 +158,12 @@ a {
   left: -60px;
   font-size: 1.25rem; }
 
-.footer-copyright {
+footer {
   bottom: 86px;
   left: 327px;
   white-space: nowrap; }
   @media (max-width: 689px) {
-    .footer-copyright {
+    footer {
       bottom: 86px;
       left: 122px; } }
 
