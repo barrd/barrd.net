@@ -39,7 +39,7 @@ function watch() {
   });
   gulp.watch("./src/scss/**/*.scss", style);
   gulp.watch("./css/*.css", css);
-  gulp.watch("./*html").on("change", browserSync.reload);
+  gulp.watch("./*.html").on("change", browserSync.reload);
 }
 
 exports.watch = watch;
