@@ -1,6 +1,7 @@
 "use strict";
 const gulp = require("gulp");
 const sass = require("gulp-sass");
+const rename = require("gulp-rename");
 const postcss = require("gulp-postcss");
 const cssnano = require("cssnano");
 const autoprefixer = require("autoprefixer");
@@ -24,6 +25,7 @@ function css() {
   return gulp
     .src("./css/*.css")
     .pipe(postcss(plugins))
+    .pipe(rename({ suffix: ".min" }))
     .pipe(gulp.dest("./css"));
 }
 
@@ -36,7 +38,6 @@ function watch() {
   });
   gulp.watch("./scss/**/*.scss", style);
   gulp.watch("./*html").on("change", browserSync.reload);
-  gulp.watch("./js/**/*.js").on("change", browserSync.reload);
 }
 
 exports.style = style;
