@@ -11,11 +11,11 @@ const browserSync = require("browser-sync").create();
 // Compile SCSS -> CSS
 function style() {
   return gulp
-    .src("src/scss/**/*.scss")
+    .src("./src/scss/**/*.scss")
     .pipe(sourcemaps.init())
     .pipe(sass().on("error", sass.logError))
     .pipe(sourcemaps.write("."))
-    .pipe(gulp.dest("src/css"))
+    .pipe(gulp.dest("./src/css"))
     .pipe(browserSync.stream());
 }
 
@@ -23,10 +23,10 @@ function style() {
 function css() {
   var plugins = [autoprefixer("last 2 version"), cssnano()];
   return gulp
-    .src("src/css/*.css")
+    .src("./src/css/*.css")
     .pipe(postcss(plugins))
     .pipe(rename({ suffix: ".min" }))
-    .pipe(gulp.dest("css"))
+    .pipe(gulp.dest("./css"))
     .pipe(browserSync.stream());
 }
 
@@ -37,8 +37,8 @@ function watch() {
       baseDir: "./"
     }
   });
-  gulp.watch("src/scss/**/*.scss", style);
-  gulp.watch("css/*.css", css);
+  gulp.watch("./src/scss/**/*.scss", style);
+  gulp.watch("./css/*.css", css);
   gulp.watch("./*html").on("change", browserSync.reload);
 }
 
