@@ -2,28 +2,32 @@
 
 You are welcome to view, clone or download this source code.
 
-## Install Instructions
+**Features**
 
-```sh
-npm init
-npm install
-```
+- Compile, minify, autoprefix, create sourcemap and rename .min Sass.
+- Watch for file changes, and automatically recompile build and reload webpage.
 
-## Gulp Commands
+## Getting Started
 
-To compile SCSS and reload browser with Browsersync
+### Dependencies
 
-```sh
-gulp watch
-```
+Make sure these are installed first.
 
-To compile CSS for distribution inc. autoprefixing
+- [Node.js](http://nodejs.org)
+- [Gulp Command Line Utility](http://gulpjs.com) `npm install --global gulp-cli`
 
-```sh
-gulp css
-```
+### Quick Start
+
+1. In bash/terminal/command line, `cd` into your project directory.
+2. Run `npm install` to install required files and dependencies.
+3. When it's done installing, run the task runner to get going:
+4. `gulp watch` automatically compiles files and applies changes using [BrowserSync](https://browsersync.io/) when you make changes to your source files.
 
 ## About The Author
 
 - **Dave Barr**
 - barrd.net at gmail.com
+
+## License
+
+The code is available under the [MIT License](LICENSE.md).
