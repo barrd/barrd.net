@@ -28,6 +28,6 @@ Make sure these are installed first.
 - **Dave Barr**
 - barrd.net at gmail.com
 
-## License
+## Licence
 
-The code is available under the [MIT License](LICENSE.md).
+The code is available under the [MIT License](LICENCE.md).
