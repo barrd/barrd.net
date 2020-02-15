@@ -102,6 +102,12 @@ a {
       color: #833124;
       transition: 0.75s ease-in-out;
       opacity: 0; }
+      @media (max-width: 689px) {
+        .diamond .diamond-content span {
+          position: relative;
+          font-size: 2.25rem;
+          letter-spacing: 2px;
+          opacity: 1; } }
     .diamond .diamond-content:hover span {
       opacity: 1; }
   .diamond:hover {
