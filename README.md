@@ -1,5 +1,7 @@
 # [barrd.net](https://barrd.net/)
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/373e171e-1b7e-4f12-92d1-6e4edb3f588d/deploy-status)](https://app.netlify.com/sites/goofy-leavitt-3ddb23/deploys)
+
 You are welcome to view, clone or download this source code.
 
 **Features**
