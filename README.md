@@ -33,3 +33,7 @@ Make sure these are installed first.
 ## Licence
 
 The code is available under the [MIT License](LICENCE.md).
+
+## Profile View Counter
+
+![Profile View Counter](https://komarev.com/ghpvc/?username=barrd)
