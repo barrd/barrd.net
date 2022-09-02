@@ -20,7 +20,7 @@ Make sure these are installed first.
 
 ### Quick Start
 
-1. In bash/terminal/command line, `cd` into your project directory.
+1. In terminal, `cd` into your project directory.
 2. Run `npm install` to install required files and dependencies.
 3. When it's done installing, run the task runner to get going:
 4. `gulp watch` automatically compiles files and applies changes using [BrowserSync](https://browsersync.io/) when you make changes to your source files.
@@ -28,7 +28,7 @@ Make sure these are installed first.
 ## About The Author
 
 - **Dave Barr**
-- barrd.net at gmail.com
+- barrd at barrd.dev
 
 ## Licence
 
