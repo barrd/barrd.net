@@ -259,10 +259,24 @@ footer {
       text-align: center;
       font-size: 1.25rem;
       opacity: 0;
-      transition: 0.75s ease-in-out; }
+      transition: 0.75s ease-in-out;
+      animation-name: counterspin;
+      animation-duration: 30000ms;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear; }
 
 @keyframes spin {
   from {
     transform: rotate(0deg); }
   to {
     transform: rotate(360deg); } }
+
+@keyframes counterspin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(-360deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  #yin-yang {
+    animation: none; } }
