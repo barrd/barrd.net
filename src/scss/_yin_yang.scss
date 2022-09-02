@@ -98,6 +98,10 @@
       font-size: 1.25rem;
       opacity: 0;
       transition: 0.75s ease-in-out;
+      animation-name: counterspin;
+      animation-duration: 30000ms;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
     }
   }
 }
@@ -108,6 +112,15 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes counterspin {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
   }
 }
 
