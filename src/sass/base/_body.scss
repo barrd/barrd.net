@@ -1,0 +1,58 @@
+html {
+	background-color: $color__black;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 62.5%;
+	line-height: 1.5;
+	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+}
+
+// Desktop
+@media (min-width: $breakpoint__medium) {
+	body {
+		background: repeating-radial-gradient(
+			circle,
+			transparent 0 20px,
+			rgba(35, 34, 32, 0.25) 21px 23px
+		);
+	}
+}
+
+// Desktop & Tablet
+@media (min-width: #{$breakpoint__small + 1px}) {
+	body {
+		display: grid;
+		place-content: center;
+		min-height: 100vh;
+		min-width: 100vw;
+	}
+}
+
+// Tablet
+@media (min-width: #{$breakpoint__small + 1px}) and (max-width: $breakpoint__medium) {
+	body {
+		background: repeating-radial-gradient(
+				circle,
+				transparent 0 20px,
+				$color__grey_dark 21px 23px
+			),
+			linear-gradient(
+				to left bottom,
+				$color__blue 25%,
+				transparent 25% 75%,
+				$color__red 75%
+			);
+	}
+}
+
+// Mobile
+@media (max-width: $breakpoint__small) {
+	body {
+		background: repeating-radial-gradient(
+				circle,
+				transparent 0 20px,
+				$color__grey_dark 21px 23px
+			),
+			linear-gradient(to bottom, $color__grey_dark 10%, $color__black 10%);
+	}
+}

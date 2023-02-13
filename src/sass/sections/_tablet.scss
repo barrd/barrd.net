@@ -1,0 +1,309 @@
+.tablet {
+	display: none;
+}
+
+/**
+ * Breakpoints for show (not hidden)
+ * --------------------------------------------------------------------
+ */
+@media (min-width: #{$breakpoint__small + 1px}) and (max-width: $breakpoint__medium) {
+	.tablet {
+		background-color: $color__black;
+		display: block;
+		background-clip: padding-box;
+		border-top: 15px solid rgba(15, 13, 9, 0.5);
+		border-bottom: 15px solid rgba(15, 13, 9, 0.5);
+		width: 100vw;
+	}
+}
+
+.container {
+	display: grid;
+	grid-template-columns: repeat(9, 1fr);
+	grid-template-rows: repeat(4, 1fr);
+	grid-gap: 0;
+	width: 90%;
+	aspect-ratio: 9/4;
+
+	font-size: 2.5rem;
+	line-height: 1;
+	letter-spacing: 1px;
+
+	li {
+		&:before {
+			display: inline-block;
+			position: relative;
+			top: 3px;
+			left: 4px;
+			width: 24px;
+			height: 24px;
+			margin: 0 0.75rem;
+		}
+
+		a {
+			display: inline-block;
+			color: $color__black;
+			text-decoration-color: transparent;
+			transition: $effect__transition;
+
+			&:hover {
+				color: $color__white;
+			}
+		}
+	}
+
+	.tabl-div1,
+	.tabl-div7 {
+		li:before {
+			@extend %arrow-black;
+		}
+		a {
+			color: $color__black;
+			&:hover {
+				color: $color__white;
+			}
+		}
+	}
+
+	.tabl-div4,
+	.tabl-div10 {
+		li:before {
+			@extend %arrow-white;
+		}
+		a {
+			color: $color__white;
+			&:hover {
+				color: $color__black;
+			}
+		}
+	}
+}
+
+.tabl-div1,
+.tabl-div4,
+.tabl-div7,
+.tabl-div9,
+.tabl-div10 {
+	display: flex;
+	align-items: center;
+}
+
+/**
+ * GitHub Link
+ * --------------------------------------------------------------------
+ */
+.tabl-div1 {
+	background-color: $color__yellow;
+	grid-area: 1 / 1 / 2 / 5;
+}
+
+.tabl-div2 {
+	grid-area: 1 / 5 / 2 / 6;
+}
+
+.tabl-div2,
+.tabl-div8 {
+	background-color: $color__yellow;
+	position: relative;
+	z-index: 1;
+	left: -25%;
+
+	.layer1 {
+		background-color: $color__black;
+		position: absolute;
+		z-index: 2;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border-top-left-radius: 50%;
+		border-bottom-left-radius: 50%;
+		aspect-ratio: 1/1;
+	}
+
+	.layer2 {
+		background-color: $color__red;
+		position: absolute;
+		z-index: 3;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		width: 50%;
+		border-radius: 50%;
+		margin: auto;
+		aspect-ratio: 1/1;
+	}
+}
+
+/**
+ * Dave Barr
+ * --------------------------------------------------------------------
+ */
+.tabl-div3 {
+	background-color: $color__black;
+	grid-area: 1 / 6 / 2 / 11;
+
+	img {
+		display: block;
+		width: 97%;
+		transform: translate(3%) translateY(3%);
+	}
+}
+
+/**
+ * Linkedin Link
+ * --------------------------------------------------------------------
+ */
+.tabl-div4 {
+	background-color: $color__red;
+	grid-area: 2 / 1 / 3 / 6;
+}
+
+.tabl-div5,
+.tabl-div11 {
+	left: -85%;
+}
+
+.tabl-div5 {
+	background-color: $color__yellow;
+	position: relative;
+	z-index: 1;
+	grid-area: 2 / 6 / 3 / 7;
+
+	.layer1 {
+		background-color: $color__red;
+		position: absolute;
+		z-index: 2;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border-top-right-radius: 50%;
+		border-bottom-right-radius: 50%;
+		aspect-ratio: 1/1;
+	}
+
+	.layer2 {
+		background-color: $color__black;
+		position: absolute;
+		z-index: 3;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		width: 50%;
+		border-radius: 50%;
+		margin: auto;
+		aspect-ratio: 1/1;
+	}
+}
+
+.tabl-div6:before,
+.tabl-div12:before {
+	background-color: $color__yellow;
+	content: "";
+	display: block;
+	width: 100%;
+	height: 100%;
+	margin-left: -50%;
+}
+
+.tabl-div6 {
+	background-color: $color__yellow;
+	grid-area: 2 / 7 / 3 / 11;
+}
+
+/**
+ * Mastodon Link
+ * --------------------------------------------------------------------
+ */
+.tabl-div7 {
+	background-color: $color__yellow;
+	grid-area: 3 / 1 / 4 / 5;
+}
+
+.tabl-div8 {
+	grid-area: 3 / 5 / 4 / 6;
+}
+
+/**
+ * barrd.dev (Blog) Link
+ * --------------------------------------------------------------------
+ */
+.tabl-div9 {
+	background-color: $color__black;
+	grid-area: 3 / 6 / 4 / 11;
+
+	li:before {
+		@extend %arrow-blue;
+	}
+
+	li a {
+		position: relative;
+		bottom: 2px;
+		color: $color__yellow;
+
+		&:hover {
+			color: $color__grey_mid;
+		}
+	}
+}
+
+/**
+ * Twitter Link
+ * --------------------------------------------------------------------
+ */
+.tabl-div10 {
+	background-color: $color__blue;
+	grid-area: 4 / 1 / 5 / 6;
+}
+
+.tabl-div11 {
+	background-color: $color__yellow;
+	position: relative;
+	z-index: 1;
+	grid-area: 4 / 6 / 5 / 7;
+
+	.layer1 {
+		background-color: $color__blue;
+		position: absolute;
+		z-index: 2;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border-top-right-radius: 50%;
+		border-bottom-right-radius: 50%;
+		aspect-ratio: 1/1;
+	}
+
+	.layer2 {
+		background-color: $color__black;
+		position: absolute;
+		z-index: 3;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		width: 50%;
+		border-radius: 50%;
+		margin: auto;
+		aspect-ratio: 1/1;
+	}
+}
+
+/**
+ * Barrdnet
+ * --------------------------------------------------------------------
+ */
+.tabl-div12 {
+	background-color: $color__yellow;
+	grid-area: 4 / 7 / 5 / 11;
+
+	img {
+		display: block;
+		width: 135%;
+		transform: rotate(270deg) translate(58.5%) translateY(174%);
+	}
+}

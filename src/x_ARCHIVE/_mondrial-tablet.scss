@@ -1,0 +1,180 @@
+/**
+	<div class="tablet-landscape">
+		<div class="tabl-div1"><a href="https://barrd.dev/" title="Go to Dave's Website barrd.dev" target="_blank"><img src="dist/svg/davebarr-white.svg" alt="Dave Barr Text"></a></div>
+		<div class="tabl-div2"><img src="dist/svg/socialmedia-red.svg" alt="Social Media Text"></div>
+		<div class="tabl-div3"></div>
+		<div class="tabl-div4"><div class="layer1"></div></div>
+		<div class="tabl-div5"><img src="dist/svg/barrdnet-blue.svg" alt="Barrd.net Text"></div>
+		<div class="tabl-div6"><div class="layer1"></div></div>
+		<div class="tabl-div7">
+			<ul>
+				<li>
+					<a href="https://barrd.dev/" title="Go to Dave's Website barrd.dev" target="_blank">barrd.dev</a>
+				</li>
+				<li>
+					<a href="https://github.com/barrd" class="github" title="Go to Dave's GitHub Account" target="_blank">GitHub</a>
+				</li>
+				<li>
+					<a href="https://www.linkedin.com/in/barrd" class="linkedin" title="Go to Dave's Linkedin Account" target="_blank">Linkedin</a>
+				</li>
+				<li>
+					<a href="https://wptoots.social/@barrd" class="mastodon" title="Go to Dave's Mastodon Account" target="_blank">Mastodon</a>
+				</li>
+				<li>
+					<a href="https://twitter.com/barrd" class="twitter" title="Go to Dave's Twitter Account" target="_blank">Twitter</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+*/
+
+.tablet-landscape {
+	display: none;
+	grid-template-columns: repeat(18, 1fr);
+	grid-template-rows: repeat(15, 1fr);
+	grid-column-gap: 10px;
+	grid-row-gap: 10px;
+	border: 10px solid $color__black;
+	min-width: 100vw;
+	aspect-ratio: 18/15;
+}
+
+/**
+ * Breakpoints for show (not hidden)
+ * --------------------------------------------------------------------
+ */
+@media (min-width: #{$breakpoint__small + 1px}) and (max-width: $breakpoint__medium) {
+	.tablet-landscape {
+		display: grid;
+	}
+}
+
+/**
+ * Dave Barr
+ * --------------------------------------------------------------------
+ */
+.tabl-div1 {
+	background-color: $color__blue;
+	grid-area: 1 / 1 / 5 / 6;
+
+	img {
+		display: block;
+		width: 87%;
+		transform: translate(0) translateY(197%);
+	}
+}
+
+/**
+ * Social Media
+ * --------------------------------------------------------------------
+ */
+.tabl-div2 {
+	background-color: $color__white;
+	grid-area: 1 / 6 / 5 / 14;
+
+	img {
+		display: block;
+		width: 98%;
+		transform: translate(1%) translateY(83%);
+	}
+}
+
+.tabl-div3 {
+	background-color: $color__yellow;
+	grid-area: 1 / 14 / 2 / 19;
+}
+
+.tabl-div4 {
+	position: relative;
+	background-image: linear-gradient(
+		to right,
+		$color__white 50%,
+		$color__blue 50%
+	);
+	grid-area: 2 / 14 / 5 / 19;
+
+	.layer1 {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: calc(50% - 5px);
+		background-color: $color__black;
+		width: 10px;
+	}
+}
+
+/**
+ * Barrdnet
+ * --------------------------------------------------------------------
+ */
+.tabl-div5 {
+	background-color: $color__white;
+	grid-area: 5 / 1 / 11 / 6;
+
+	img {
+		transform: rotate(270deg) translate(-99%) translateY(244%);
+		transform-origin: top left;
+		width: 123%;
+	}
+}
+
+.tabl-div6 {
+	position: relative;
+	background-image: linear-gradient(
+		to right,
+		$color__yellow 50%,
+		$color__white 50%
+	);
+	grid-area: 11 / 1 / 16 / 6;
+
+	.layer1 {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: calc(50% - 5px);
+		background-color: $color__black;
+		width: 10px;
+	}
+}
+
+/**
+ * Text & Links
+ * --------------------------------------------------------------------
+ */
+.tabl-div7 {
+	background-color: $color__red;
+	position: relative;
+	grid-area: 5 / 6 / 16 / 19;
+	font-size: 3rem;
+	line-height: 1.5;
+	letter-spacing: 1px;
+
+	ul {
+		transform: rotate(90deg) translate(0%) translateY(-100%);
+		transform-origin: top left;
+	}
+
+	li {
+		&:before {
+			display: inline-block;
+			position: relative;
+			top: 5px;
+			left: 0;
+			content: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20512%20512%22%3E%3Cpath%20d%3D%22M502.6%20278.6c12.5-12.5%2012.5-32.8%200-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3%200s-12.5%2032.8%200%2045.3l73.4%2073.4H32c-17.7%200-32%2014.3-32%2032s14.3%2032%2032%2032h370.7l-73.4%2073.4c-12.5%2012.5-12.5%2032.8%200%2045.3s32.8%2012.5%2045.3%200l128-128z%22%20fill%3D%22%23" + $color__black-bare + "%22%2F%3E%3C%2Fsvg%3E");
+			width: 30px;
+			height: 30px;
+			margin-right: 0.25rem;
+		}
+		a {
+			display: inline-block;
+			color: $color__white;
+			text-decoration-color: transparent;
+			padding: 1rem 0 0.5rem 0;
+			transition: $effect__transition;
+
+			&:hover {
+				color: $color__black;
+			}
+		}
+	}
+}

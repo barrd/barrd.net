@@ -1,0 +1,368 @@
+.mobile {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(8, 1fr);
+	grid-gap: 0px;
+	width: 100vw;
+	aspect-ratio: 4/8;
+}
+
+/**
+ * Breakpoint for hidden
+ * --------------------------------------------------------------------
+ */
+@media (min-width: #{$breakpoint__small + 1px}) {
+	.mobile {
+		display: none;
+	}
+}
+
+.mob-div1 {
+	background-color: $color__black;
+	background-image: linear-gradient(
+		to bottom,
+		$color__yellow 50%,
+		$color__red 50%
+	);
+	grid-area: 1 / 1 / 2 / 2;
+	border-top-left-radius: 50%;
+}
+
+.mob-div2 {
+	background-color: $color__blue;
+	position: relative;
+	z-index: 1;
+	grid-area: 1 / 2 / 2 / 3;
+
+	.layer1 {
+		background-color: $color__white;
+		position: absolute;
+		z-index: 2;
+		top: 0;
+		left: 0;
+		width: 25vw;
+		border-bottom-right-radius: 50%;
+		border-bottom-left-radius: 50%;
+		aspect-ratio: 1/1;
+	}
+
+	.layer2 {
+		background-color: $color__grey_dark;
+		position: absolute;
+		z-index: 3;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		width: 50%;
+		border-radius: 50%;
+		margin: auto;
+		aspect-ratio: 1/1;
+	}
+}
+
+.mob-div3 {
+	background: linear-gradient(
+		to bottom left,
+		$color__yellow 50%,
+		$color__red 50%
+	);
+	grid-area: 1 / 3 / 2 / 4;
+}
+
+.mob-div4 {
+	background-color: $color__blue;
+	position: relative;
+	z-index: 1;
+	grid-area: 1 / 4 / 2 / 5;
+
+	.layer1 {
+		background-color: $color__white;
+		position: absolute;
+		z-index: 2;
+		top: 0;
+		left: 0;
+		width: 25vw;
+		border-radius: 50%;
+		aspect-ratio: 1/1;
+	}
+}
+
+.mob-div5 {
+	background: linear-gradient(
+		to bottom left,
+		$color__grey_dark 50%,
+		$color__yellow 50%
+	);
+	grid-area: 2 / 1 / 3 / 2;
+}
+
+.mob-div6 {
+	background-color: $color__blue;
+	position: relative;
+	z-index: 1;
+	grid-area: 2 / 2 / 3 / 3;
+	overflow: hidden;
+
+	.layer1 {
+		background-color: $color__red;
+		position: absolute;
+		z-index: 2;
+		top: 0;
+		left: 0;
+		width: 50vw;
+		border-radius: 50%;
+		aspect-ratio: 1/1;
+	}
+}
+
+.mob-div7 {
+	background-color: $color__yellow;
+	position: relative;
+	z-index: 1;
+	grid-area: 2 / 3 / 3 / 4;
+	overflow: hidden;
+
+	.layer1 {
+		background-color: $color__white;
+		position: absolute;
+		z-index: 2;
+		top: 0;
+		right: 0;
+		width: 50vw;
+		border-radius: 50%;
+		aspect-ratio: 1/1;
+	}
+}
+
+.mob-div8 {
+	background: linear-gradient(
+		to bottom,
+		$color__blue 11.111%,
+		$color__white 11.111% 22.222%,
+		$color__blue 22.222% 33.333%,
+		$color__white 33.333% 44.444%,
+		$color__blue 44.444% 55.555%,
+		$color__white 55.555% 66.666%,
+		$color__blue 66.666% 77.777%,
+		$color__white 77.777% 88.888%,
+		$color__blue 88.888% 100%
+	);
+	grid-area: 2 / 4 / 3 / 5;
+}
+
+/**
+ * Barrdnet
+ * --------------------------------------------------------------------
+ */
+.mob-div9 {
+	grid-area: 3 / 1 / 7 / 2;
+
+	img {
+		transform: rotate(270deg) translate(-108%) translateY(10%);
+		transform-origin: top left;
+		width: 359%;
+	}
+}
+
+/**
+ * Dave Barr
+ * --------------------------------------------------------------------
+ */
+.mob-div10 {
+	grid-area: 3 / 2 / 4 / 5;
+
+	img {
+		display: block;
+		width: 95%;
+		margin: 0 auto;
+		transform: translate(-4%) translateY(34%);
+	}
+}
+
+/**
+ * Text & Links
+ * --------------------------------------------------------------------
+ */
+.mob-div11 {
+	grid-area: 4 / 2 / 7 / 5;
+	font-size: 2rem;
+	line-height: 1.25;
+	letter-spacing: 2px;
+
+	ul {
+		position: relative;
+		top: 0;
+		left: 0.5rem;
+		transform: rotate(90deg) translate(-2%) translateY(-97%);
+		transform-origin: top left;
+	}
+
+	li {
+		margin: 0.75rem 0;
+
+		&:before {
+			@extend %arrow-blue;
+			display: inline-block;
+			position: relative;
+			top: 9px;
+			left: 0;
+			width: 30px;
+			height: 30px;
+			margin-right: 0.5rem;
+		}
+
+		a {
+			background-color: $color__black;
+			display: inline-block;
+			color: $color__white;
+			text-decoration-color: transparent;
+			text-shadow: 2px 2px 4px #000;
+			transition: $effect__transition;
+
+			&:hover {
+				color: $color__grey_mid;
+			}
+		}
+	}
+}
+
+.mob-div12 {
+	background: linear-gradient(
+		to right,
+		$color__white 11.111%,
+		$color__blue 11.111% 22.222%,
+		$color__white 22.222% 33.333%,
+		$color__blue 33.333% 44.444%,
+		$color__white 44.444% 55.555%,
+		$color__blue 55.555% 66.666%,
+		$color__white 66.666% 77.777%,
+		$color__blue 77.777% 88.888%,
+		$color__white 88.888% 100%
+	);
+	grid-area: 7 / 1 / 8 / 2;
+}
+
+.mob-div13 {
+	background: linear-gradient(
+		to bottom left,
+		$color__yellow 50%,
+		$color__blue 50%
+	);
+	grid-area: 7 / 2 / 8 / 3;
+}
+
+.mob-div14 {
+	background-color: $color__red;
+	position: relative;
+	z-index: 1;
+	grid-area: 7 / 3 / 8 / 4;
+	overflow: hidden;
+
+	.layer1 {
+		background-color: $color__yellow;
+		position: absolute;
+		z-index: 2;
+		bottom: 0;
+		right: 0;
+		width: 50vw;
+		border-radius: 50%;
+		aspect-ratio: 1/1;
+	}
+}
+
+.mob-div15 {
+	background: linear-gradient(
+		to bottom left,
+		$color__yellow 50%,
+		$color__grey_dark 50%
+	);
+	grid-area: 7 / 4 / 8 / 5;
+}
+
+.mob-div16 {
+	background-color: $color__blue;
+	position: relative;
+	z-index: 1;
+	grid-area: 8 / 1 / 9 / 2;
+	overflow: hidden;
+
+	.layer1 {
+		background-color: $color__yellow;
+		position: absolute;
+		z-index: 2;
+		bottom: 0;
+		right: 0;
+		width: 50vw;
+		border-radius: 50%;
+		aspect-ratio: 1/1;
+	}
+}
+
+.mob-div17 {
+	background-color: $color__red;
+	position: relative;
+	z-index: 1;
+	grid-area: 8 / 2 / 9 / 3;
+	overflow: hidden;
+
+	.layer1 {
+		background-color: $color__blue;
+		position: absolute;
+		z-index: 2;
+		top: -50%;
+		left: 0;
+		width: 25vw;
+		border-radius: 50%;
+		aspect-ratio: 1/1;
+	}
+
+	.layer2 {
+		background-color: $color__grey_dark;
+		position: absolute;
+		z-index: 3;
+		bottom: -50%;
+		left: 0;
+		width: 25vw;
+		border-radius: 50%;
+		aspect-ratio: 1/1;
+	}
+}
+
+.mob-div18 {
+	background-color: $color__white;
+	position: relative;
+	z-index: 1;
+	grid-area: 8 / 3 / 9 / 4;
+	overflow: hidden;
+
+	.layer1 {
+		background-color: $color__yellow;
+		position: absolute;
+		z-index: 2;
+		top: -50%;
+		left: 0;
+		width: 25vw;
+		border-radius: 50%;
+		aspect-ratio: 1/1;
+	}
+}
+
+.mob-div19 {
+	background-color: $color__blue;
+	position: relative;
+	z-index: 1;
+	grid-area: 8 / 4 / 9 / 5;
+	overflow: hidden;
+
+	.layer1 {
+		background-color: $color__white;
+		position: absolute;
+		z-index: 2;
+		top: -50%;
+		left: 0;
+		width: 25vw;
+		border-radius: 50%;
+		aspect-ratio: 1/1;
+	}
+}
