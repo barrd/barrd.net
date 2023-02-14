@@ -30,7 +30,10 @@
 	grid-template-rows: repeat(6, 1fr);
 	grid-gap: 0px;
 	width: 98vh;
-	max-width: 1024px;
+	height: 98vh;
+	min-width: 98vw;
+	max-width: 900px;
+	aspect-ratio: 1/1;
 
 	img {
 		display: block;
