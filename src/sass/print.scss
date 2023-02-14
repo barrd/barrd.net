@@ -51,12 +51,12 @@ ul {
 		padding: 1rem 1rem 1rem 0;
 		border-bottom: 1px dashed rgba(126, 124, 124, 0.5);
 
-		&:nth-child(2) {
-			border-top: 4px solid $color__black; // rgba(126, 124, 124, 0.25);
+		&:first-child {
+			border-bottom: 4px solid $color__black;
 		}
 
 		&:last-child {
-			border-bottom: 4px dashed $color__black; // rgba(126, 124, 124, 0.25);
+			border-bottom: 4px dashed $color__black;
 		}
 
 		a {
